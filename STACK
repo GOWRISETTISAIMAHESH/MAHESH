@@ -1,0 +1,32 @@
+#include <stdio.h>
+int stack[10];
+int top=0;
+void push(int d) {
+  stack[top++]=d;
+}
+void pop(){
+  top--;
+}
+void disply(){
+  int t=top;
+  for(int i=t;i>=0;i--){
+    printf("%d",stack[i]);
+  }
+}
+void max() {
+  int max=stack[top];
+  for(int i=top-1;i>=0;i--){
+    if(stack[i]>max){
+      max=stack[i];
+    }
+  }
+}
+int main() {
+  push(10);
+  push(2);
+  push(3);
+  push(40);
+  pop();
+  disply();
+  max();
+}
